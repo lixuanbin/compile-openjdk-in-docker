@@ -1,4 +1,4 @@
-## Build Instructions
+## Docker Build Instructions
 
 1. git clone this repository:
 `git clone https://github.com/lixuanbin/compile-openjdk-in-docker.git`
@@ -11,6 +11,17 @@
 5. [inside container] copy the source and binaries to the mounted volume to persist your work:
 `cp -r /opt/openjdk /app/ && cd /app/openjdk/openjdk8`
 6. [inside container] alter the source codes and re-compile it, or you can use gdb to debug the source codes, have fun :)
+
+## Download Image And Load
+If you found the docker build procedure above is slow and painful, you can also download image from here: https://pan.baidu.com/s/1sj5-cPfzoGRawXBA0ld6aQ  extract code: `u9ht`.
+Then extract and load the image to your local repo:
+
+```bash
+tar -zxvf ubuntu1404_openjdk8_v3.img.tar.gz
+docker load < ubuntu1404_openjdk8_v3.img
+```
+
+Now you can run from this image and make some adventures.
 
 ## Using Fine-Grained Make Targets
 The default behavior for make is to create consistent and correct output, at the expense of build speed, if necessary.
